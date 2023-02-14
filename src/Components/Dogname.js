@@ -1,7 +1,7 @@
 import React from "react";
 import "bulma/css/bulma.css";
 import "../stylesheets/style.css";
-import { SwitchGroup } from "@headlessui/vue";
+
 
 function Dogname({ doggy, activeTab, dogid }) {
     console.log(doggy)
