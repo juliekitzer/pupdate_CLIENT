@@ -21,7 +21,7 @@ function Editactivity({ activity, editClicked, onEditClick, dogid, userid, handl
         }
 
         async function updateActivity(activityid) {
-                let res2 = await fetch("http://localhost:3005/api/activity/update", {
+                let res2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/activity/update`, {
                         method: "PUT",
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

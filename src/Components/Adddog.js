@@ -48,7 +48,7 @@ function Adddog({ user, handleClose, open, getDogsByUser, handleSetDogs }) {
     async function handleSubmitDog(e) {
         e.preventDefault();
         try {
-            let res = await fetch("http://localhost:3005/api/Dog/create", {
+            let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/Dog/create`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -83,7 +83,7 @@ function Adddog({ user, handleClose, open, getDogsByUser, handleSetDogs }) {
     };
 
     async function createFirstPost(dogid) {
-        let res = await fetch("http://localhost:3005/api/activity/create", {
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/activity/create`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -100,7 +100,7 @@ function Adddog({ user, handleClose, open, getDogsByUser, handleSetDogs }) {
 
     async function attachDogToUser(dogid) {
         // console.log('arrived at attached user',dogid)
-        let res2 = await fetch("http://localhost:3005/api/JoinTable/create", {
+        let res2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/JoinTable/create`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

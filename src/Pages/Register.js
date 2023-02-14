@@ -18,7 +18,7 @@ function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:3005/Register", {
+      let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/Register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

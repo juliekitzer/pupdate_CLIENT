@@ -32,7 +32,7 @@ function AddCareTaker({activeTab}) {
 
 
       async function getUserByUsername(username){
-        let res = await fetch (`http://localhost:3005/api/user/username/${username}`)
+        let res = await fetch (`${process.env.REACT_APP_SERVER_URL}/api/user/username/${username}`)
         res = await res.json()
         setCareTakerId(res.id)
       }
@@ -40,7 +40,7 @@ function AddCareTaker({activeTab}) {
 
       async function attachDogToCaretaker (activeTab, careTakerId) {
         // console.log('arrived at attached user',dogid)
-        let res2 = await fetch("http://localhost:3005/api/JoinTable/create", {
+        let res2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/JoinTable/create`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

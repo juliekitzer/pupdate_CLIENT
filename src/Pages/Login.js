@@ -16,7 +16,7 @@ function Login({ isAuthenticated, setIsAuthenticated, user, setUser }) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            let res = await fetch("http://localhost:3005/verification", {
+            let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/verification`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -33,6 +33,7 @@ function Login({ isAuthenticated, setIsAuthenticated, user, setUser }) {
             }
 
             else {
+                console.log("login failed")
                 navigate("/Login")
             }
         } catch (err) {

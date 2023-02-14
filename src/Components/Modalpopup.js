@@ -18,7 +18,7 @@ function Modalpopup({ handleClose, open, dog, user, activities, rerender, handle
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            let res = await fetch("http://localhost:3005/api/Activity/create", {
+            let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/Activity/create`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

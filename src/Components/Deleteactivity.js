@@ -6,7 +6,7 @@ function Deleteactivity(activityid, userid, getAllActivitiesFunction) {
 
 
   async function DeleteThisActivity() {
-    let res2 = await fetch("http://localhost:3005/api/activity/delete", {
+    let res2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/activity/delete`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
