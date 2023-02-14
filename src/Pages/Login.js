@@ -49,7 +49,7 @@ function Login({ isAuthenticated, setIsAuthenticated, user, setUser }) {
     }
 
     return (
-        <div class="login">
+        <div className="login">
             <center>
                 <div className="tile is-parent-tile is-4 centered">
                     <article className="tile is-child notification is-primary">

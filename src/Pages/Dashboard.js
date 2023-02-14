@@ -92,7 +92,7 @@ function Dashboard({ isAuthenticated, setIsAuthenticated, user, setUser}) {
     }
 
     async function getDogsByUser(userid) {
-        let res = await fetch(`http://localhost:3005/api/Dog/${userid}`)
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/Dog/${userid}`)
         res = await res.json()
         console.log("this is the res", res)
         setDog(res)
@@ -103,7 +103,7 @@ function Dashboard({ isAuthenticated, setIsAuthenticated, user, setUser}) {
 
     async function getActivitesByDog(dogid) {
         // console.log('saving information for', dogid)
-        let res = await fetch(`http://localhost:3005/api/Activity/${dogid}`)
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/Activity/${dogid}`)
         res = await res.json()
         setActivities(activities => [...activities, res]);
     }

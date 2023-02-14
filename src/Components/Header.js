@@ -30,7 +30,7 @@ setMenuIsActive (!menuIsActive)
     </a>
   </div>
 
-  <div id="navbarBasicExample"  class={menuIsActive == true ? "navbar-menu is-active": "navbar-menu"}
+  <div id="navbarBasicExample"  className={menuIsActive == true ? "navbar-menu is-active": "navbar-menu"}
  >
     <div className="navbar-start">
       <a className="navbar-item" onClick={(e)=>handleMenuChange()}>
